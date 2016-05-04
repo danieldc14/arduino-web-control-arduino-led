@@ -1,6 +1,7 @@
 int led = 13;
 
 void setup() {
+  Serial.begin(9600);
   pinMode(led, OUTPUT);
 }
 
@@ -23,10 +24,12 @@ void executeOrder(int order) {
     //We execute the order.
     switch(order){
       case 0:
+        break;
+      case 1:
         digitalWrite(led, 0);
         Serial.println("TURN OFF");
         break;
-      case 1:
+      case 2:
         digitalWrite(led, 1);
         Serial.println("TURN ON");
         break;
