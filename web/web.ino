@@ -25,15 +25,18 @@ void executeOrder(int order) {
     switch(order){
       case 0:
         break;
-      case 1:
-        digitalWrite(led, 0);
+      case 100:
+        digitalWrite(led, LOW);
         Serial.println("TURN OFF");
         break;
-      case 2:
-        digitalWrite(led, 1);
+      case 101:
+        digitalWrite(led, HIGH);
         Serial.println("TURN ON");
         break;
       default:
-        Serial.println("Unknown order");
+        led = order;
+        pinMode(led, OUTPUT);
+        Serial.print("PIN SET ");
+        Serial.println(led);
     }
 }
